@@ -1,0 +1,29 @@
+{
+  "name": "neom-techverse-3d",
+  "version": "1.0.0",
+  "description": "NEOM Techverse - Premium Digital Marketing Agency Website with 3D",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "14.2.3",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "three": "^0.164.1",
+    "@react-three/fiber": "^8.16.8",
+    "@react-three/drei": "^9.105.6",
+    "@react-three/postprocessing": "^2.16.2",
+    "framer-motion": "^11.2.6"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "@types/react": "^18.3.2",
+    "@types/react-dom": "^18.3.0",
+    "@types/three": "^0.164.0",
+    "typescript": "^5.4.5"
+  }
+}
