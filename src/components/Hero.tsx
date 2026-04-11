@@ -1,10 +1,20 @@
 'use client';
 
-import { useRef, useMemo } from 'react';
+import { useRef, useMemo, Suspense, lazy } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Float, MeshDistortMaterial, Sphere, Stars } from '@react-three/drei';
+import { Float, MeshDistortMaterial, Stars } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import * as THREE from 'three';
+
+function HeroCanvas() {
+  return (
+    <Suspense fallback={null}>
+      <Canvas camera={{ position: [0, 0, 6], fov: 60 }}>
+        <Scene />
+      </Canvas>
+    </Suspense>
+  );
+}
 
 function AnimatedShape() {
   const meshRef = useRef<THREE.Mesh>(null);
@@ -92,9 +102,7 @@ export default function Hero() {
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* 3D Background */}
       <div className="absolute inset-0 z-0">
-        <Canvas camera={{ position: [0, 0, 6], fov: 60 }}>
-          <Scene />
-        </Canvas>
+        <HeroCanvas />
       </div>
 
       {/* Overlay Gradient */}
